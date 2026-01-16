@@ -5,35 +5,35 @@
 [![AI](https://img.shields.io/badge/AI-MediaPipe%20%26%20OpenCV-blue)](https://github.com/MatysiakQ/Hand-Tracking-Control-System)
 
 ## 📝 O Projekcie
-Zaawansowany system sterowania robotyczną dłonią w czasie rzeczywistym. Projekt integruje sztuczną inteligencję (Computer Vision) z inżynierią sterowania (LabVIEW/Arduino), umożliwiając bezdotykowe sterowanie fizycznym urządzeniem za pomocą gestów dłoni.
+Zaawansowany system sterowania robotyczną dłonią w czasie rzeczywistym, łączący sztuczną inteligencję z inżynierią sterowania. Projekt umożliwia bezdotykowe sterowanie fizycznym manipulatorem poprzez mapowanie ruchów ludzkiej dłoni na sygnały sterujące serwomechanizmami.
 
 ## 🛠️ Stos Technologiczny (Tech Stack)
-- **Python 3.x:** OpenCV, MediaPipe (detekcja 21 punktów dłoni, logika wizyjna).
-- **LabVIEW 2025:** Komunikacja UDP, parsowanie danych, interfejs GUI.
-- **LINX Toolkit:** Komunikacja i sterowanie Arduino.
+- **Python 3.x:** OpenCV & MediaPipe – odpowiedzialne za tracking 21 punktów dłoni i analizę gestów.
+- **LabVIEW 2025:** Centrum dowodzenia – odbiór danych UDP, parsująca logika sterowania i GUI.
+- **LINX Toolkit:** Interfejs komunikacyjny między LabVIEW a mikrokontrolerem.
 - **Hardware:** Arduino + Serwomechanizmy (sterowanie PWM).
 
 ## ✨ Główne Funkcje
-- **Precyzyjny Hand Tracking:** Detekcja kątów zgięcia 5 palców oraz obrotu nadgarstka (Yaw).
-- **Stabilizacja Ruchu:** Zastosowanie filtrów EMA (Exponential Moving Average) oraz Medianowych dla eliminacji drgań.
-- **Szybka Komunikacja UDP:** Przesył danych między Pythonem a LabVIEW (Port 5010) z minimalnym opóźnieniem.
-- **Automatyczna Konwersja Sygnałów:** Przeliczanie kątów na bezpieczne wartości Duty Cycle dla serw:
+- **Precyzyjny Hand Tracking:** Detekcja zgięcia 5 palców oraz rotacji nadgarstka (Yaw).
+- **Komunikacja UDP:** Błyskawiczny przesył danych między modułem wizyjnym (Python) a sterownikiem (LabVIEW) na porcie 5010.
+- **Filtrowanie Sygnału:** Stabilizacja ruchu za pomocą filtrów EMA (Exponential Moving Average) oraz filtrów medianowych, eliminujących drgania.
+- **Bezpieczne Mapowanie:** Przeliczanie kątów na sygnał Duty Cycle według precyzyjnego wzoru:
   $$DutyCycle = \left(\frac{Angle}{3600}\right) + 0.05$$
-- **Rozpoznawanie Gestów:** Wbudowany Gesture ID pozwalający na wyzwalanie konkretnych akcji.
+- **Gesture Recognition:** System rozpoznaje unikalne ID gestów, co pozwala na automatyczne wyzwalanie sekwencji ruchowych.
 
-## 🚀 Uruchomienie
-1. **Hardware:** Wgraj firmware LINX na swoje Arduino.
-2. **AI Module:** Uruchom skrypt Python (`main.py`), aby rozpocząć tracking i nadawanie danych UDP.
-3. **Control Center:** Otwórz `arduinoTest.vi` w LabVIEW, wybierz odpowiedni port COM i uruchom program.
+## 🚀 Jak to uruchomić?
+1. **Firmware:** Wgraj oprogramowanie LINX na Arduino.
+2. **AI Module:** Uruchom skrypt `main.py` w folderze `Kod`, aby zainicjować kamerę i tracking.
+3. **Control:** Otwórz `arduinoTest.vi` w LabVIEW, wybierz port COM i uruchom program.
 
-## 📂 Zawartość Repozytorium
-- `Kod/` – Skrypty Python oraz pliki LabVIEW (.vi).
-- `REKA ROBOTA/` – Pliki powiązane z konstrukcją fizyczną dłoni.
-- `ADAPTER/` & `PRZEDRAMIE/` – Elementy konstrukcyjne/montażowe.
+## 📂 Zawartość Projektu
+- **`Kod`** – Kompletna logika sterująca (Python & LabVIEW).
+- **`REKA ROBOTA`** – Pliki projektowe dłoni.
+- **`ADAPTER` / `PRZEDRAMIE`** – Elementy konstrukcyjne do druku/montażu.
 
 ## 👥 Autor
 - Adam Jastrzębski
--Łukasz Koszołko
+- Łukasz Koszołko
 
 ---
-*Projekt z obszaru robotyki i integracji systemów AI.*
+*Projekt łączy Computer Vision z robotyką, dostarczając gotowe rozwiązanie do interakcji człowiek-maszyna.*
