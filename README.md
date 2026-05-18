@@ -17,10 +17,6 @@
 [![AI](https://img.shields.io/badge/AI-Computer%20Vision-purple?style=for-the-badge)](https://github.com/MatysiakQ/Hand-Tracking-Control-System)
 
 <br>
-
-### 👨‍💻 Portfolio
-🔗 https://adamjastrzebski.bio/
-
 </div>
 
 ---
@@ -58,7 +54,7 @@ The project demonstrates full integration between software AI systems and real-w
 
 ## 🔧 Work In Progress
 
-![Work In Progress](./Photo/Work_in_Progress.jpg)
+![Work In Progress](./Photo/Work_in_Progres.jpg)
 
 ---
 
